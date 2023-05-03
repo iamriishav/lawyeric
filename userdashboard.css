@@ -1,0 +1,80 @@
+.form_container{
+  padding: 0;
+}
+
+.documents_container {
+  margin-top: 12rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.document_container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transform: translateX(200%);
+}
+
+#mydocument {
+  transform: translateX(0);
+}
+
+.document_container > a {
+  text-decoration: none;
+  border: 2px solid #2f4ed0;
+  color: #000;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  transition: all 0.2s linear;
+}
+
+.document_container > a:hover {
+  background: #2f4ed0;
+  border: 2px solid transparent;
+  color: #fff;
+}
+
+.document_container > table {
+  font-size: 1.6rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 2rem;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+td:last-child{
+  text-align: center;
+}
+
+td > a {
+  text-decoration: none;
+  border: 2px solid #2f4ed0;
+  color: #000;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  transition: all 0.2s linear;
+}
+
+td > a:hover {
+  background: #2f4ed0;
+  border: 2px solid transparent;
+  color: #fff;
+}

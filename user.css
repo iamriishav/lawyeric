@@ -1,0 +1,115 @@
+html{
+  overflow-x: hidden;
+}
+
+.form_container {
+  height: auto;
+  margin: 10rem 0;
+  position: relative;
+}
+
+.action_btn {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3rem;
+  border-bottom: 1px solid #9f9b9b;
+}
+
+.action_btn > button {
+  outline: none;
+  background: none;
+  border: 2px solid #2f4ed0;
+  color: #000;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.action_btn > button:hover{
+  background: #2f4ed0;
+  border: 2px solid transparent;
+  color: #fff;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+.form {
+  width: 80rem;
+}
+
+form > input {
+  height: 5rem;
+}
+
+form > input,
+select,
+textarea {
+  width: 100%;
+  padding: 2rem;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(240, 239, 239);
+  font-size: 1.5rem;
+}
+
+form > select {
+  padding: 1.2rem;
+}
+
+form > textarea {
+  resize: none;
+}
+
+form > input,
+select,
+textarea {
+  margin-bottom: 2rem;
+}
+
+form > input:focus {
+  border: 2px solid #2f4ed0;
+}
+
+#update_btn {
+  width: 100%;
+  height: 5rem;
+  border-radius: 5px;
+  margin-top: 2rem;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background: #2f4ed0;
+  color: #fff;
+  transition: all 0.2s linear;
+}
+
+#update_btn:hover {
+  background: transparent;
+  border: 2px solid #2f4ed0;
+  color: #000;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .nav > a {
+    margin-left: -4rem;
+  }
+
+  .form {
+    width: 90%;
+  }
+}

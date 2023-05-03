@@ -1,0 +1,121 @@
+.about_container{
+    margin-top: 12rem;
+    width: 100%;
+}
+
+.about_content{
+    width: 60%;
+    margin: auto;
+}
+
+.about_content > h2{
+    font-size: 4rem;
+    text-align: center;
+}
+
+.about_content > p{
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-top: 3rem;
+    color: gray;
+}
+
+.team{
+    width: 90%;
+    margin: auto;
+    margin-top: 10rem;
+    text-align: center;
+}
+
+.team_heading{
+    font-size: 4rem;
+    text-align: center;
+}
+
+.heading{
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
+.leadership_team{
+    margin: 3rem 0;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.team_members{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 36rem;
+    gap: 2rem;
+    background-color: #f7f7f7;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.member_img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 3rem 0;
+}
+
+.member_img > img{
+    width: 100%;
+}
+
+.member_details{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.member_details > h2{
+    font-size: 1.8rem;
+}
+
+.member_details > p{
+    color: gray;
+}
+
+.member_social > a{
+    font-size: 3rem;
+    color: #000;
+    transition: all .2s linear;
+}
+
+.member_social > a:hover{
+    color: #2f4ed0;
+}
+
+@media only screen and (max-width: 768px){
+    .about_content{
+        width: 90%;
+        padding: 0;
+    }
+
+    .about_content > h2{
+        font-size: 3rem;
+    }
+
+    .about_content > p{
+        font-size: 1.5rem;
+    }
+
+    .leadership_team{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .team_members{
+        flex-direction: column;
+        padding: 1rem;
+        width: 32rem;
+        gap: 1rem;
+    }
+}

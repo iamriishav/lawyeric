@@ -1,0 +1,86 @@
+.contact_container {
+  margin: 9.5rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact_container > h2 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.contact_form {
+  width: 50rem;
+  margin: auto;
+}
+
+.contact_form > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name > input {
+  padding: 2rem;
+  height: 5rem;
+  width: 49%;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(240, 239, 239);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+form > input,
+textarea {
+  width: 100%;
+  padding: 2rem;
+  height: 5rem;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(240, 239, 239);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+form > textarea {
+  height: 100%;
+  resize: none;
+}
+
+form > input:focus, .name > input:focus {
+  border: 2px solid #2f4ed0;
+}
+
+button {
+  width: 100%;
+  height: 5rem;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background: #2f4ed0;
+  color: #fff;
+  transition: all 0.2s linear;
+}
+
+button:hover {
+  background: transparent;
+  border: 2px solid #2f4ed0;
+  color: #000;
+}
+
+@media only screen and (max-width: 768px){
+  .contact_form{
+    width: 90%;
+  }
+}
