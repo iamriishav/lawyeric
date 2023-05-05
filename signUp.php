@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $pin = mysqli_real_escape_string($conn, $_POST['pin']);
   $address = mysqli_real_escape_string($conn, $_POST['address']);
   $password = mysqli_real_escape_string($conn, $_POST['password']);
-  $islawyer = isset($_POST['password']) ? 1 : 0;
+  $islawyer = isset($_POST['islawyer']) ? 1 : 0;
 
   $check_email = "SELECT * FROM `user947` WHERE user_email = '$email'";
   $email_query = mysqli_query($conn, $check_email);
@@ -58,8 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Lato&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="SignUp.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/SignUp.css" />
   <title>Sign Up - Lawyeric</title>
 </head>
 
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="name" id="name" placeholder="name" required />
         <input type="email" name="email" id="email" placeholder="Email" required />
         <input type="tel" name="phone" id="phone" placeholder="Phone" minlength="10" maxlength="10" required />
-        <input type="number" name="aadhaar" id="aadhaar" placeholder="Addhaar" required minlength="12" maxlength="12" />
+        <input type="number" name="aadhaar" id="aadhaar" placeholder="Addhaar" minlength="12" maxlength="12" required />
         <input type="text" name="certificate" id="certificate" placeholder="Certificate Number" required />
         <input type="text" name="country" id="country" value="India" disabled />
         <select name="state" id="state">
@@ -134,32 +134,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="city" id="city" placeholder="City" required />
         <input type="number" name="pin" id="pin" placeholder="Pin Code" required />
         <textarea name="address" id="address" cols="30" rows="5" placeholder="Address"></textarea>
-        <input type="password" name="password" id="password" placeholder="Password" required minlength="6" maxlength="18" />
+        <input type="password" name="password" id="password" placeholder="Password" minlength="6" maxlength="18" required />
+
+        <div class="action_container">
+          <div class="show_password">
+            <input type="checkbox" name="showPassword" id="showPassword" />
+            <label for="showPassword">Show Password</label>
+          </div>
+          <div class="is_lawyer">
+            <input type="checkbox" name="islawyer" id="islawyer" />
+            <label for="islawyer">Are you a Lawyer ?</label>
+          </div>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
     </div>
-    <div class="action_container">
-      <div class="show_password">
-        <input type="checkbox" name="showPassword" id="showPassword" />
-        <label for="showPassword">Show Password</label>
-      </div>
-      <div class="is_lawyer">
-        <input type="checkbox" name="islawyer" id="islawyer" />
-        <label for="islawyer">Are you a Lawyer ?</label>
-      </div>
-    </div>
-    <button type="submit">Sign Up</button>
-    </form>
     <p>Already have an account? <a href="signIn">Log In</a></p>
   </div>
-  <footer>
-    <div class="footer">
-      <p>Copyright &copy; <span class="year"></span> Lawyeric Ltd.</p>
-      <div class="social">
-        <a href="#" alt="facebook"><ion-icon name="logo-facebook"></ion-icon></a>
-        <a href="#" alt="twitter"><ion-icon name="logo-twitter"></ion-icon></a>
-        <a href="#" alt="linkedin"><ion-icon name="logo-linkedin"></ion-icon></a>
-      </div>
-    </div>
-  </footer>
   <script>
     const islawyer = document.getElementById('islawyer');
     const certificate = document.getElementById('certificate');
@@ -184,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       menu.classList.toggle("active");
     };
   </script>
-  <script src="app.js"></script>
+  <script src="./JavaScript/app.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

@@ -5,6 +5,7 @@ html{
 .form_container {
   height: auto;
   margin: 10rem 0;
+  margin-top: 5rem;
   position: relative;
 }
 

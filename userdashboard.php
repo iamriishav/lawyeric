@@ -8,7 +8,7 @@ if ($_SESSION['userid'] == '') {
     header("location: signin");
 }
 
-$data = "SELECT * FROM `document`";
+$data = "SELECT * FROM `document` WHERE applicant_email = '$_SESSION[email]'";
 $result = mysqli_query($conn, $data);
 
 $data_count = mysqli_num_rows($result);
@@ -27,10 +27,10 @@ $data_count = mysqli_num_rows($result);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Lato&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="SignIn.css" />
-    <link rel="stylesheet" href="user.css" />
-    <link rel="stylesheet" href="userdashboard.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/SignIn.css" />
+    <link rel="stylesheet" href="./css/user.css" />
+    <link rel="stylesheet" href="./css/userdashboard.css" />
     <title>Profile</title>
 </head>
 
@@ -89,25 +89,15 @@ $data_count = mysqli_num_rows($result);
                     </tbody>
                     </table>';
                 } else {
-                    echo '<a href="#">Make your Legal Document</a>;';
+                    echo '<a href="./forms/proofofincomeaffidavit">Make your Legal Document</a>;';
                 }
                 ?>
             </div>
             <div id="makedocument" class="document_container">
-                <a href="#">Make your Legal Document</a>;
+                <a href="./forms/proofofincomeaffidavit">Make your Legal Document</a>
             </div>
         </div>
     </section>
-    <footer>
-        <div class="footer">
-            <p>Copyright &copy; <span class="year"></span> Lawyeric Ltd.</p>
-            <div class="social">
-                <a href="#" alt="facebook"><ion-icon name="logo-facebook"></ion-icon></a>
-                <a href="#" alt="twitter"><ion-icon name="logo-twitter"></ion-icon></a>
-                <a href="#" alt="linkedin"><ion-icon name="logo-linkedin"></ion-icon></a>
-            </div>
-        </div>
-    </footer>
     <script>
         var mydocument = document.getElementById("mydocument");
         var makedocument = document.getElementById("makedocument");

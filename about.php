@@ -14,8 +14,8 @@ session_start();
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="about.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./css/about.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <title>About Us - Lawyeric</title>
 </head>
 
@@ -45,7 +45,7 @@ session_start();
           <li>
             <a href="#">Services</a>
             <ul class="submenu">
-              <li><a href="#">Make Documents &#8599;</a></li>
+              <li><a href="./forms/proofofincomeaffidavit">Make Documents &#8599;</a></li>
               <li><a href="#">Sign Documents &#8599;</a></li>
               <li>
                 <a href="#">Start a business &#8599;</a>

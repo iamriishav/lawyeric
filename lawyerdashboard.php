@@ -27,11 +27,11 @@ $data_count = mysqli_num_rows($result);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Lato&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="SignIn.css" />
-    <link rel="stylesheet" href="user.css" />
-    <link rel="stylesheet" href="userdashboard.css" />
-    <link rel="stylesheet" href="lawyerdashboard.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/SignIn.css" />
+    <link rel="stylesheet" href="./css/user.css" />
+    <link rel="stylesheet" href="./css/userdashboard.css" />
+    <link rel="stylesheet" href="./css/lawyerdashboard.css" />
     <title>Profile</title>
 </head>
 
@@ -81,7 +81,7 @@ $data_count = mysqli_num_rows($result);
                         echo '<td>' . $doc_data['document_id'] . '</td>';
                         echo '<td>' . $doc_data['document_name'] . '</td>';
                         echo '<td>' . $doc_data['document_status'] . '</td>';
-                        echo '<td>' . $doc_data['whoapplied'] . '</td>';
+                        echo '<td>' . $doc_data['applicant_name'] . '</td>';
                         echo '<td> <a href="#">Upload Document</a> </td>';
                         echo '</tr>';
                     }

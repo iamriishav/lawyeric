@@ -61,8 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Lato&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="SignIn.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./css/SignIn.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <title>Sign In - Lawyeric</title>
 </head>
 
@@ -106,16 +106,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
     <p>Don't have an account? <a href="signUp">Sign Up</a></p>
   </div>
-  <footer>
-    <div class="footer">
-      <p>Copyright &copy; <span class="year"></span> Lawyeric Ltd.</p>
-      <div class="social">
-        <a href="#" alt="facebook"><ion-icon name="logo-facebook"></ion-icon></a>
-        <a href="#" alt="twitter"><ion-icon name="logo-twitter"></ion-icon></a>
-        <a href="#" alt="linkedin"><ion-icon name="logo-linkedin"></ion-icon></a>
-      </div>
-    </div>
-  </footer>
   <script>
     var preloader = document.querySelector(".preloader");
     var menu = document.getElementById("main");
@@ -128,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       menu.classList.toggle("active");
     };
   </script>
-  <script src="app.js"></script>
+  <script src="./JavaScript/app.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
