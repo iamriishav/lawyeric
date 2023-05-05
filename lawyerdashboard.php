@@ -82,11 +82,18 @@ $data_count = mysqli_num_rows($result);
                         echo '<td>' . $doc_data['applicant_name'] . '</td>';
                         echo '<td>';
                         echo '
-                        <form action="upload.php" method="post" id="upload" name="signup_form" autocomplete="off">
+                        <form action="update.php" method="post" class="td_form" name="status_update_form" autocomplete="off">
                             <input type="text" name="status" value="'.$doc_data['document_status'].'" id="status">
                             <button class="send_btn">Send</button>
                         </form>';
                         echo '</td>';
+                        // echo '<td>';
+                        // echo '
+                        // <form action="upload.php" method="post" class="td_form" name="document_upload_form" enctype="multipart/form-data" autocomplete="off">
+                        //     <input type="file" name="document" id="document">
+                        //     <button class="send_btn" name="submit">Upload</button>
+                        // </form>';
+                        // echo '</td>';
                         echo '</tr>';
                     }
                     echo '</table>';

@@ -81,7 +81,7 @@ $data_count = mysqli_num_rows($result);
                 ?>
                 <?php
                         if ($doc_data["document_status"] == "Completed") {
-                            echo '<td> <a href="#">Download Document</a> </td>';
+                            echo '<td> <a href="pdf_uploads/<?php $file_name ?>">Download Document</a> </td>';
                         } else {
                             echo '<td> <a href="#" class="disabled">Download Document</a> </td>';
                         }

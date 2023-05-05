@@ -15,7 +15,7 @@ td > input {
   font-size: 1.5rem;
 }
 
-#upload{
+.td_form{
   display: flex;
   gap: 1rem;
 }
