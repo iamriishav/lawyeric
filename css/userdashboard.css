@@ -1,4 +1,4 @@
-.form_container{
+.form_container {
   padding: 0;
   margin-top: 12rem;
 }
@@ -59,7 +59,7 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-td:last-child{
+td:last-child {
   text-align: center;
 }
 
@@ -78,4 +78,20 @@ td > a:hover {
   background: #2f4ed0;
   border: 2px solid transparent;
   color: #fff;
+}
+
+.status{
+  display: block;
+}
+
+.disabled {
+  background-color: gray;
+  border: transparent;
+  cursor: not-allowed;
+  color: #fff;
+}
+
+.disabled:hover {
+  background-color: gray;
+  border: transparent;
 }

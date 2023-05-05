@@ -66,30 +66,30 @@ $data_count = mysqli_num_rows($result);
             <div id="mydocument" class="document_container">
                 <?php
                 if ($data_count > 0) {
-                    echo '                
-                    <table>
-                    <thead>
+                    echo '<table>
                         <tr>
                             <th>Doc ID</th>
                             <th>Document</th>
                             <th>Status</th>
-                            <th>Message</th>
-                        </tr>
-                    </thead>
-                    <tbody>';
-                    while ($doc_data = mysqli_fetch_assoc($result)) {
-                        echo '<tr>
-                        <td>' . $doc_data["document_id"] . '</td>
-                        <td>' . $doc_data["document_name"] . '</td>
-                        <td>' . $doc_data["document_status"] . '</td>
-                        <td>' . $doc_data["document_message"] . '</td>
+                            <th>Document</th>
                         </tr>';
+                    while ($doc_data = mysqli_fetch_assoc($result)) {
+                        echo '<tr>';
+                        echo '<td>' . $doc_data["document_id"] . '</td>';
+                        echo '<td>' . $doc_data["document_name"] . '</td>';
+                        echo '<td>' . $doc_data["document_status"] . '</td>';
+                ?>
+                <?php
+                        if ($doc_data["document_status"] == "Completed") {
+                            echo '<td> <a href="#">Download Document</a> </td>';
+                        } else {
+                            echo '<td> <a href="#" class="disabled">Download Document</a> </td>';
+                        }
+                        echo '</tr>';
                     }
-                    echo '
-                    </tbody>
-                    </table>';
+                    echo '</table>';
                 } else {
-                    echo '<a href="./forms/proofofincomeaffidavit">Make your Legal Document</a>;';
+                    echo '<a href="./forms/proofofincomeaffidavit">Make your Legal Document</a>';
                 }
                 ?>
             </div>

@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $email = mysqli_real_escape_string($conn, $_POST['email']);
   $phone = mysqli_real_escape_string($conn, $_POST['phone']);
   $aadhaar = mysqli_real_escape_string($conn, $_POST['aadhaar']);
-  $certificate = mysqli_real_escape_string($conn, $_POST['certificate']);
   $state = mysqli_real_escape_string($conn, $_POST['state']);
   $city = mysqli_real_escape_string($conn, $_POST['city']);
   $pin = mysqli_real_escape_string($conn, $_POST['pin']);
@@ -19,26 +18,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $email_query = mysqli_query($conn, $check_email);
 
   $email_count = mysqli_num_rows($email_query);
+  $pass = password_hash($password, PASSWORD_BCRYPT);
 
   if ($email_count > 0) {
     echo "<script>
       alert('Email Already Registered');
       </script>";
   } else {
-    $pass = password_hash($password, PASSWORD_BCRYPT);
-    $sql = "INSERT INTO `user947` (`user_name`, `user_email`,  `user_phone`, `user_aadhaar`, `certificate`, `user_state`,  `user_city`,  `user_pin`, `user_address`, `user_pass`, `islawyer`) VALUES ('$name', '$email', '$phone', '$aadhaar', '$certificate', '$state', '$city', '$pin', '$address', '$pass', '$islawyer')";
+    $sql = "INSERT INTO `user947` (`user_name`, `user_email`,  `user_phone`, `user_aadhaar`, `user_state`,  `user_city`,  `user_pin`, `user_address`, `user_pass`, `islawyer`) VALUES ('$name', '$email', '$phone', '$aadhaar', '$state', '$city', '$pin', '$address', '$pass', '$islawyer')";
 
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
       echo "<script>
-                  alert('Account Created Successfully');
-                  location = 'signin';
-              </script>";
+              alert('Account Created Successfully');
+              location = 'signin';
+            </script>";
     } else {
       echo "<script>
-                  alert('Account not created');
-              </script>";
+              alert('Account not created');
+            </script>";
     }
   }
 }
@@ -90,8 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="name" id="name" placeholder="name" required />
         <input type="email" name="email" id="email" placeholder="Email" required />
         <input type="tel" name="phone" id="phone" placeholder="Phone" minlength="10" maxlength="10" required />
-        <input type="number" name="aadhaar" id="aadhaar" placeholder="Addhaar" minlength="12" maxlength="12" required />
-        <input type="text" name="certificate" id="certificate" placeholder="Certificate Number" required />
+        <input type="number" name="aadhaar" id="aadhaar" placeholder="Addhaar" required minlength="12" maxlength="12" />
         <input type="text" name="country" id="country" value="India" disabled />
         <select name="state" id="state">
           <option value="--Select State--">--Select State--</option>
@@ -134,35 +132,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="city" id="city" placeholder="City" required />
         <input type="number" name="pin" id="pin" placeholder="Pin Code" required />
         <textarea name="address" id="address" cols="30" rows="5" placeholder="Address"></textarea>
-        <input type="password" name="password" id="password" placeholder="Password" minlength="6" maxlength="18" required />
-
-        <div class="action_container">
-          <div class="show_password">
-            <input type="checkbox" name="showPassword" id="showPassword" />
-            <label for="showPassword">Show Password</label>
-          </div>
-          <div class="is_lawyer">
-            <input type="checkbox" name="islawyer" id="islawyer" />
-            <label for="islawyer">Are you a Lawyer ?</label>
-          </div>
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
+        <input type="password" name="password" id="password" placeholder="Password" required minlength="6" maxlength="18" />
     </div>
+    <div class="action_container">
+      <div class="show_password">
+        <input type="checkbox" name="showPassword" id="showPassword" />
+        <label for="showPassword">Show Password</label>
+      </div>
+      <div class="is_lawyer">
+        <input type="checkbox" name="islawyer" id="islawyer" />
+        <label for="islawyer">Are you a Lawyer ?</label>
+      </div>
+    </div>
+    <button>Sign Up</button>
+    </form>
     <p>Already have an account? <a href="signIn">Log In</a></p>
   </div>
-  <script>
-    const islawyer = document.getElementById('islawyer');
-    const certificate = document.getElementById('certificate');
-
-    islawyer.addEventListener('change', () => {
-      if (islawyer.checked) {
-        certificate.style.display = 'block';
-      } else {
-        certificate.style.display = 'none';
-      }
-    });
-  </script>
   <script>
     var preloader = document.querySelector(".preloader");
     var menu = document.getElementById("main");

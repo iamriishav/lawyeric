@@ -71,18 +71,22 @@ $data_count = mysqli_num_rows($result);
                     <tr>
                         <th>Doc ID</th>
                         <th>Document</th>
-                        <th>Status</th>
                         <th>Customer Name</th>
-                        <th>Action</th>
+                        <th>Status</th>
                     </tr>';
                     while ($doc_data = mysqli_fetch_assoc($result)) {
                         echo '
                         <tr>';
                         echo '<td>' . $doc_data['document_id'] . '</td>';
                         echo '<td>' . $doc_data['document_name'] . '</td>';
-                        echo '<td>' . $doc_data['document_status'] . '</td>';
                         echo '<td>' . $doc_data['applicant_name'] . '</td>';
-                        echo '<td> <a href="#">Upload Document</a> </td>';
+                        echo '<td>';
+                        echo '
+                        <form action="upload.php" method="post" id="upload" name="signup_form" autocomplete="off">
+                            <input type="text" name="status" value="'.$doc_data['document_status'].'" id="status">
+                            <button class="send_btn">Send</button>
+                        </form>';
+                        echo '</td>';
                         echo '</tr>';
                     }
                     echo '</table>';
@@ -93,16 +97,6 @@ $data_count = mysqli_num_rows($result);
             </div>
         </div>
     </section>
-    <!-- <footer>
-        <div class="footer">
-            <p>Copyright &copy; <span class="year"></span> Lawyeric Ltd.</p>
-            <div class="social">
-                <a href="#" alt="facebook"><ion-icon name="logo-facebook"></ion-icon></a>
-                <a href="#" alt="twitter"><ion-icon name="logo-twitter"></ion-icon></a>
-                <a href="#" alt="linkedin"><ion-icon name="logo-linkedin"></ion-icon></a>
-            </div>
-        </div>
-    </footer> -->
     <script>
         var preloader = document.querySelector(".preloader");
         var menu = document.getElementById("main");
