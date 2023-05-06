@@ -73,6 +73,7 @@ $data_count = mysqli_num_rows($result);
                         <th>Document</th>
                         <th>Customer Name</th>
                         <th>Status</th>
+                        <th>Document</th>
                     </tr>';
                     while ($doc_data = mysqli_fetch_assoc($result)) {
                         echo '
@@ -83,17 +84,23 @@ $data_count = mysqli_num_rows($result);
                         echo '<td>';
                         echo '
                         <form action="update.php" method="post" class="td_form" name="status_update_form" autocomplete="off">
-                            <input type="text" name="status" value="'.$doc_data['document_status'].'" id="status">
+                            <input type="text" name="status" value="' . $doc_data['document_status'] . '" id="status">
                             <button class="send_btn">Send</button>
                         </form>';
                         echo '</td>';
-                        // echo '<td>';
-                        // echo '
-                        // <form action="upload.php" method="post" class="td_form" name="document_upload_form" enctype="multipart/form-data" autocomplete="off">
-                        //     <input type="file" name="document" id="document">
-                        //     <button class="send_btn" name="submit">Upload</button>
-                        // </form>';
-                        // echo '</td>';
+                ?>
+                <?php
+                        if ($doc_data["document_status"] == "completed") {
+                            echo '<td>';
+                            echo '
+                            <form action="upload.php" method="post" class="td_form" name="document_upload_form" enctype="multipart/form-data" autocomplete="off">
+                                <input type="file" name="document" id="document">
+                                <button class="send_btn" name="submit">Upload</button>
+                            </form>';
+                            echo '</td>';
+                        } else {
+                            echo '<td> <button class="disabled upload_document" name="submit" onclick="status()">Upload</button> </td>';
+                        }
                         echo '</tr>';
                     }
                     echo '</table>';
@@ -115,6 +122,10 @@ $data_count = mysqli_num_rows($result);
         const showNavbar = () => {
             menu.classList.toggle("active");
         };
+
+        function status() {
+            alert('Please update status as completed to Upload the file');
+        }
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

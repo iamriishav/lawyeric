@@ -80,8 +80,13 @@ $data_count = mysqli_num_rows($result);
                         echo '<td>' . $doc_data["document_status"] . '</td>';
                 ?>
                 <?php
-                        if ($doc_data["document_status"] == "Completed") {
-                            echo '<td> <a href="pdf_uploads/<?php $file_name ?>">Download Document</a> </td>';
+                        if ($doc_data["document_status"] == "completed") {
+                            echo '<td>';
+                            echo '
+                            <form action="download.php" method="get" class="td_form" name="document_download_form"autocomplete="off">
+                                <button class="send_btn" name="submit">Download</button>
+                            </form>';
+                            echo '</td>';
                         } else {
                             echo '<td> <a href="#" class="disabled">Download Document</a> </td>';
                         }

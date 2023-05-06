@@ -95,3 +95,27 @@ td > a:hover {
   background-color: gray;
   border: transparent;
 }
+
+.td_form{
+  display: flex;
+  gap: 1rem;
+}
+
+.send_btn {
+  width: 10rem;
+  height: 5rem;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background: #2f4ed0;
+  color: #fff;
+  transition: all 0.2s linear;
+}
+
+.send_btn:hover {
+  background: transparent;
+  border: 2px solid #2f4ed0;
+  color: #000;
+}

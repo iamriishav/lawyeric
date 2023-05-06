@@ -38,3 +38,17 @@ td > input {
   border: 2px solid #2f4ed0;
   color: #000;
 }
+
+.upload_document{
+  cursor: default;
+  width: 10rem;
+  height: 5rem;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background: gray;
+  color: #fff;
+  transition: all 0.2s linear;
+}
