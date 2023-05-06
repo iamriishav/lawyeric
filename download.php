@@ -18,7 +18,7 @@ if ($result) {
     $fileContent = $row['document_pdf'];
 
     header("Content-type: pdf_uploads/");
-    header("Content-Disposition: attachment; filename= downloaded_file.pdf");
+    header("Content-Disposition: attachment; filename= document.pdf");
 
     echo "<script>
             alert('File Downloaded Successfully!');
@@ -29,3 +29,4 @@ if ($result) {
 }
 
 mysqli_close($conn);
+?>
