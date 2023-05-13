@@ -3,6 +3,10 @@
 session_start();
 include '../conn.php';
 
+if ($_SESSION['userid'] == '') {
+    header("location: ../signin");
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $document_id = mysqli_real_escape_string($conn, $_POST['document_id']);
     $document_name = mysqli_real_escape_string($conn, $_POST['document_name']);

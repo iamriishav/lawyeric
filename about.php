@@ -90,7 +90,6 @@ session_start();
     </div>
     <div class="team">
       <h2 class="team_heading">Meet the talent</h2>
-      <h2 class="heading">Leadership team</h2>
       <div class="leadership_team">
         <div class="team_members">
           <div class="member_img">
@@ -98,39 +97,10 @@ session_start();
           </div>
           <div class="member_details">
             <h2>Rishav Kumar Rajak</h2>
-            <p>Team Lead</p>
             <div class="member_social">
               <a href="https://linkedin.com/in/iamriishav" alt="linkedin" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
               <a href="https://github.com/iamriishav" alt="github" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
               <a href="https://twitter.com/iamriishav" alt="twitter" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
-            </div>
-          </div>
-        </div>
-        <div class="team_members">
-          <div class="member_img">
-            <img src="./static/images/member2.webp" alt="Pankaj Toppo" />
-          </div>
-          <div class="member_details">
-            <h2>Pankaj Toppo</h2>
-            <p>Front-end</p>
-            <div class="member_social">
-              <a href="https://www.linkedin.com/in/pankaj-toppo-b27b53199/" alt="linkedin" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
-              <a href="#" alt="github"><ion-icon name="logo-github"></ion-icon></a>
-              <a href="#" alt="twitter"><ion-icon name="logo-twitter"></ion-icon></a>
-            </div>
-          </div>
-        </div>
-        <div class="team_members">
-          <div class="member_img">
-            <img src="./static/images/member3.webp" alt="Sonu Oraon" />
-          </div>
-          <div class="member_details">
-            <h2>Sonu Oraon</h2>
-            <p>Designing</p>
-            <div class="member_social">
-              <a href="#" alt="linkedin"><ion-icon name="logo-linkedin"></ion-icon></a>
-              <a href="https://github.com/sonuoraon" alt="github" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-              <a href="#" alt="twitter"><ion-icon name="logo-twitter"></ion-icon></a>
             </div>
           </div>
         </div>
